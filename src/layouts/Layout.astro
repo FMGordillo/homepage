@@ -15,9 +15,44 @@ const { title, description, backUrl } = Astro.props.frontmatter || Astro.props;
       name="description"
       content={description || "Blogs made by FMGordillo"}
     />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5XJ8T97");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2GEHG6YVW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-P2GEHG6YVW");
+    </script>
   </head>
 
   <body class="text-base mx-auto py-4 px-8 dark:text-white dark:bg-black">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5XJ8T97"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <aside class="fixed hidden inset-y-0 lg:block">
       <ul class="flex h-full w-8 flex-col gap-8 justify-center">
         <AsideItem client:only="solidjs" icon="github" />
